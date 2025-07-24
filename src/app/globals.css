@@ -17,7 +17,6 @@
   --font-sans: "Nunito Sans", sans-serif;
 
   /* Colors */
-  --color-*: initial;
   /* Dark Mode Colors */
   --color-dark-blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
   --color-darker-blue: hsl(207, 26%, 17%); /* Dark Mode Background */
@@ -44,4 +43,11 @@
   --shadow-focus-dark: 0 0 7px 0 hsla(0, 0%, 0%, 29.31%);
   --shadow-border-light: 0 0 4px 1px hsla(200, 15%, 8%, 25.24%);
   --shadow-border: 0 0 4px 1px hsla(0, 0%, 0%, 10.5%);
+
+  /* Breakpoints */
+  --breakpoint-xl: 81rem;
+  --breakpoint-2xl: 90rem;
+
+  /* Grid */
+  --my-countries-grid: repeat(auto-fill, minmax(min(263px, 100%), 1fr));
 }
