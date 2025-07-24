@@ -73,6 +73,10 @@ async function CountryPage({
                   value: countryData.region,
                 },
                 {
+                  label: 'Sub Region',
+                  value: countryData.subregion,
+                },
+                {
                   label: 'Capital',
                   value: countryData.capital,
                 },
