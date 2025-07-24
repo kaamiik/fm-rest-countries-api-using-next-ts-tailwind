@@ -19,9 +19,7 @@ async function CountryPage({
 
   const countryData: Country = data.find((c: Country) => {
     const searchName = country.toLowerCase();
-    return (
-      c.cca3.toLowerCase() === searchName || c.cca2.toLowerCase() === searchName
-    );
+    return c.cca3.toLowerCase() === searchName;
   });
 
   if (!countryData) {
