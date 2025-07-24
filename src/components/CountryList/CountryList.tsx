@@ -29,7 +29,7 @@ async function CountryList({
   ) : (
     <ul className="mt-8 grid grid-cols-(--my-countries-grid) gap-10 md:mt-12 lg:gap-[4.6875rem]">
       {filteredData.map((country) => (
-        <CountryCard key={country.cca2} country={country} />
+        <CountryCard key={country.cca3} country={country} />
       ))}
     </ul>
   );
