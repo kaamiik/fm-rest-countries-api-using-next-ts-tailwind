@@ -13,7 +13,7 @@ import {
 } from 'react-aria-components';
 import Icon from '@/components/Icon';
 
-const REGIONS = ['', 'Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+const REGIONS = ['', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 function RegionSelect({ onChange }: { onChange: (value: string) => void }) {
   const { theme } = useTheme();
