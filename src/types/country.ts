@@ -20,14 +20,13 @@ export type Country = {
     };
   };
   tld: string[];
-  cca2: string;
   cca3: string;
   currencies: {
     [currencyCode: string]: Currency;
   };
   capital: string[];
   region: string;
-  // subregion: string;
+  subregion: string;
   borders: string[];
   population: number;
 };
