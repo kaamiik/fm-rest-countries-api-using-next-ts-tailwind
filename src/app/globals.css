@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -8,13 +8,13 @@
   font-weight: 300 600 800;
   font-display: swap;
   src: url(/fonts/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf)
-    format("truetype");
+    format('truetype');
 }
 
 @theme {
   /* Fonts */
   --font-*: initial;
-  --font-sans: "Nunito Sans", sans-serif;
+  --font-sans: 'Nunito Sans', sans-serif;
 
   /* Colors */
   /* Dark Mode Colors */
@@ -50,4 +50,24 @@
 
   /* Grid */
   --my-countries-grid: repeat(auto-fill, minmax(min(263px, 100%), 1fr));
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: block;
+  width: max-content;
+  margin: auto;
+  color: black;
+  animation: spin 1000ms linear infinite;
+}
+.spinner svg {
+  display: block;
 }
