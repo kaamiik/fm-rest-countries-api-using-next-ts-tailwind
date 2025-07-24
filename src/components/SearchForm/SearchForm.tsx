@@ -9,8 +9,12 @@ import RegionSelect from '@/components/RegionSelect';
 function SearchForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const currentSearch = searchParams.get('search') || '';
+  const currentRegion = searchParams.get('region') || '';
+  const [inputValue, setInputValue] = React.useState(currentSearch);
 
   function handleSearchChange(value: string) {
+    setInputValue(value);
     const params = new URLSearchParams(searchParams.toString());
 
     if (value) {
@@ -35,8 +39,8 @@ function SearchForm() {
       onSubmit={(e) => e.preventDefault()}
       className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between"
     >
-      <StyledSearchField onChange={handleSearchChange} />
-      <RegionSelect onChange={handleRegionChange} />
+      <StyledSearchField onChange={handleSearchChange} value={inputValue} />
+      <RegionSelect onChange={handleRegionChange} value={currentRegion} />
     </form>
   );
 }
