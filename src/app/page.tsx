@@ -5,7 +5,12 @@ import SearchForm from '@/components/SearchForm';
 import CountryList from '@/components/CountryList';
 import Spinner from '@/components/Spinner';
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ search?: string; region?: string }>;
+}) {
+  const resolvedSearchParams = await searchParams;
   return (
     <MaxWidthWrapper
       as="main"
@@ -15,7 +20,7 @@ export default async function Home() {
       <SearchForm />
 
       <React.Suspense fallback={<Spinner />}>
-        <CountryList />
+        <CountryList searchParams={resolvedSearchParams} />
       </React.Suspense>
     </MaxWidthWrapper>
   );
