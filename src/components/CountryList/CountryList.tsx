@@ -17,7 +17,7 @@ async function CountryList({
     <div className="mt-8 text-center">
       <p className="text-800 text-very-dark-blue-l flex items-center justify-center gap-2 text-lg dark:text-white">
         <span className="text-800">🔍</span>
-        No countries found matching
+        No countries found matching{' '}
         {searchParams.search?.trim() || 'your criteria'}
         {searchParams.region && ` in ${searchParams.region.trim()}`}
         <span className="text-2xl">🌍</span>

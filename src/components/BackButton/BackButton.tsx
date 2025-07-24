@@ -11,7 +11,7 @@ function BackButton() {
   const { theme } = useTheme();
   return (
     <button
-      className="dark:bg-dark-blue md:text-400 shadow-focus-dark flex w-fit cursor-pointer items-center gap-2 rounded-sm bg-white px-6 py-2 md:rounded-md md:px-10"
+      className="dark:bg-dark-blue md:text-400 shadow-focus-dark flex w-fit cursor-pointer items-center gap-2 rounded-sm bg-white px-6 py-2 transition-shadow duration-300 hover:ring-2 hover:ring-blue-500 hover:ring-offset-2 md:rounded-md md:px-10"
       onClick={() => router.back()}
     >
       <Icon
