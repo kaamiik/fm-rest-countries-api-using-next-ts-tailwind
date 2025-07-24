@@ -19,7 +19,7 @@ export default async function Home({
       <h1 className="sr-only">Rest Countries API</h1>
       <SearchForm />
 
-      <React.Suspense fallback={<Spinner />}>
+      <React.Suspense fallback={<Spinner size={56} />}>
         <CountryList searchParams={resolvedSearchParams} />
       </React.Suspense>
     </MaxWidthWrapper>
