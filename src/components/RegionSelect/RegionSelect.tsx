@@ -36,7 +36,7 @@ function RegionSelect({
       onSelectionChange={handleSelectionChange}
     >
       <Label className="sr-only">Filter by region</Label>
-      <Button className="dark:bg-dark-blue flex w-full cursor-pointer items-center justify-between rounded-md bg-white py-4 ps-6 pe-5 shadow-md data-focus-visible:outline-2 data-focus-visible:-outline-offset-1 data-focus-visible:outline-purple-500">
+      <Button className="dark:bg-dark-blue dark:hover:bg-dark-blue-dark dark:focus:bg-dark-blue-dark flex w-full cursor-pointer items-center justify-between rounded-md bg-white py-4 ps-6 pe-5 shadow-md transition-all duration-200 hover:shadow-lg focus:shadow-lg data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-1 data-[focus-visible]:outline-blue-500">
         <SelectValue>{value || 'Filter by Region'}</SelectValue>
         <Icon
           src={
@@ -46,13 +46,13 @@ function RegionSelect({
           height={12}
         />
       </Button>
-      <Popover className="dark:bg-dark-blue w-full max-w-[12.5rem] rounded-md bg-white shadow-md">
-        <ListBox className="text-200 md:text-300 flex flex-col gap-2">
+      <Popover className="dark:bg-dark-blue w-full max-w-[12.5rem] rounded-md bg-white shadow-lg">
+        <ListBox className="text-200 md:text-300 flex flex-col gap-1 p-2">
           {REGIONS.filter((region) => region !== value).map((region) => (
             <ListBoxItem
               key={region}
               id={region}
-              className="cursor-pointer px-6 py-2 data-focus-visible:outline-0 data-focused:rounded-md data-focused:bg-gray-300 data-pressed:rounded-md data-pressed:bg-gray-300 dark:data-focused:rounded-md dark:data-focused:bg-purple-500 dark:data-pressed:rounded-md dark:data-pressed:bg-purple-500"
+              className="cursor-pointer px-6 py-2 transition-colors duration-100 hover:rounded-md hover:bg-gray-200 focus:rounded-md focus:bg-gray-200 data-[focus-visible]:outline-0 dark:hover:bg-blue-500/20 dark:focus:bg-blue-500/20 dark:focus-visible:ring-2 dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-1"
             >
               {region === '' ? 'Filter by Region' : region}
             </ListBoxItem>

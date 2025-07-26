@@ -30,7 +30,7 @@ function StyledSearchField({
         />
       </div>
       <Input
-        className="dark:bg-dark-blue placeholder:text-gray w-full cursor-pointer rounded-md bg-white py-4 ps-[4.625rem] text-black shadow-md data-focus-visible:outline-2 data-focus-visible:-outline-offset-2 data-focus-visible:outline-blue-500 dark:text-white dark:placeholder:text-white"
+        className="dark:bg-dark-blue placeholder:text-gray dark:hover:bg-dark-blue-dark dark:focus:bg-dark-blue-dark w-full cursor-pointer rounded-md bg-white py-4 ps-[4.625rem] text-black shadow-md transition-all duration-200 hover:shadow-lg focus:shadow-lg data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-blue-500 dark:text-white dark:placeholder:text-white"
         placeholder={placeholder}
       />
     </SearchField>
