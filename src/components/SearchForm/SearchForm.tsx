@@ -11,10 +11,15 @@ function SearchForm() {
   const searchParams = useSearchParams();
   const currentSearch = searchParams.get('search') || '';
   const currentRegion = searchParams.get('region') || '';
-  const [inputValue, setInputValue] = React.useState(currentSearch);
+  // const [inputValue, setInputValue] = React.useState(currentSearch);
+
+  const [optimisticSearch, setOptimisticSearch] =
+    React.useOptimistic(currentSearch);
+  const [optimisticRegion, setOptimisticRegion] =
+    React.useOptimistic(currentRegion);
 
   function handleSearchChange(value: string) {
-    setInputValue(value);
+    // setInputValue(value);
     const params = new URLSearchParams(searchParams.toString());
 
     if (value) {
@@ -22,7 +27,11 @@ function SearchForm() {
     } else {
       params.delete('search');
     }
-    router.push(`?${params.toString()}`);
+
+    React.startTransition(() => {
+      setOptimisticSearch(value);
+      router.push(`?${params.toString()}`);
+    });
   }
 
   function handleRegionChange(value: string) {
@@ -32,15 +41,22 @@ function SearchForm() {
     } else {
       params.delete('region');
     }
-    router.push(`?${params.toString()}`);
+
+    React.startTransition(() => {
+      setOptimisticRegion(value);
+      router.push(`?${params.toString()}`);
+    });
   }
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
       className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between"
     >
-      <StyledSearchField onChange={handleSearchChange} value={inputValue} />
-      <RegionSelect onChange={handleRegionChange} value={currentRegion} />
+      <StyledSearchField
+        onChange={handleSearchChange}
+        value={optimisticSearch}
+      />
+      <RegionSelect onChange={handleRegionChange} value={optimisticRegion} />
     </form>
   );
 }
