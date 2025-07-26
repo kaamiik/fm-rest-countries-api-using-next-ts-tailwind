@@ -11,7 +11,7 @@ async function CountryList({
   searchParams: { search?: string; region?: string };
 }) {
   const data: Country[] = await getData();
-  const filteredData = getFilteredData(data, searchParams);
+  const filteredData = await getFilteredData(data, searchParams);
 
   return filteredData.length === 0 ? (
     <div className="mt-8 text-center">
