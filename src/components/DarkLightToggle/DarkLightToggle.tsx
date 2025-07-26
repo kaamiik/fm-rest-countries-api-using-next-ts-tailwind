@@ -22,6 +22,7 @@ function DarkLightToggle() {
 
   return (
     <button
+      type="button"
       onClick={handleClick}
       className="text-200 md:text-400 flex cursor-pointer items-center gap-2 rounded-md p-2 font-semibold transition-all duration-200 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:text-gray-100 dark:hover:bg-gray-700 dark:focus-visible:ring-blue-400"
     >

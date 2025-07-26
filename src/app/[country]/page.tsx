@@ -2,7 +2,7 @@ import React from 'react';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import Link from 'next/link';
 import BackButton from '@/components/BackButton';
-import Icon from '@/components/Icon';
+import Image from 'next/image';
 import InfoList from '@/components/InfoList';
 import { getData } from '@/lib/utils';
 import type { Country, Currency } from '@/types';
@@ -45,8 +45,9 @@ async function CountryPage({
       >
         <BackButton />
         <div className="mt-16 grid gap-11 md:mt-20 lg:grid-cols-2">
-          <Icon
+          <Image
             src={countryData.flags.svg}
+            alt={countryData.flags.alt}
             width={560}
             height={400}
             className="h-auto max-w-full rounded-sm shadow-md"
