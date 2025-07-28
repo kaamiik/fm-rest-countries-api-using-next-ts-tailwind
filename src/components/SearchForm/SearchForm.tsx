@@ -30,7 +30,7 @@ function SearchForm() {
 
     React.startTransition(() => {
       setOptimisticSearch(value);
-      router.push(`?${params.toString()}`);
+      router.replace(`?${params.toString()}`);
     });
   }
 
@@ -44,7 +44,7 @@ function SearchForm() {
 
     React.startTransition(() => {
       setOptimisticRegion(value);
-      router.push(`?${params.toString()}`);
+      router.replace(`?${params.toString()}`);
     });
   }
   return (
