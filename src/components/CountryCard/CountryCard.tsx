@@ -8,7 +8,7 @@ import InfoList from '../InfoList';
 
 function CountryCard({ country }: { country: Country }) {
   return (
-    <li className="dark:bg-dark-blue shadow-focus relative mx-auto rounded-md bg-white transition-all duration-300 hover:scale-105 has-[:focus]:ring-2 has-[:focus]:ring-blue-500 has-[:focus]:ring-offset-2">
+    <li className="dark:bg-dark-blue shadow-focus relative mx-auto max-w-[16.5rem] rounded-md bg-white transition-all duration-300 hover:scale-105 has-[:focus]:ring-2 has-[:focus]:ring-blue-500 has-[:focus]:ring-offset-2">
       <Image
         className="h-[160px] w-[264px] rounded-t-md object-cover"
         src={country.flags.svg}
