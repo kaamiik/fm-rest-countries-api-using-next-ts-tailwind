@@ -11,7 +11,6 @@ function SearchForm() {
   const searchParams = useSearchParams();
   const currentSearch = searchParams.get('search') || '';
   const currentRegion = searchParams.get('region') || '';
-  // const [inputValue, setInputValue] = React.useState(currentSearch);
 
   const [optimisticSearch, setOptimisticSearch] =
     React.useOptimistic(currentSearch);
@@ -19,7 +18,6 @@ function SearchForm() {
     React.useOptimistic(currentRegion);
 
   function handleSearchChange(value: string) {
-    // setInputValue(value);
     const params = new URLSearchParams(searchParams.toString());
 
     if (value) {
