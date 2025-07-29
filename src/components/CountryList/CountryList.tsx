@@ -9,7 +9,7 @@ async function CountryList({
   searchParams: { search?: string; region?: string };
 }) {
   const data: Country[] = await getData();
-  const filteredData = await getFilteredData(data, searchParams);
+  const filteredData = getFilteredData(data, searchParams);
 
   return (
     <PaginatedCountryList
