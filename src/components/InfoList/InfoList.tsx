@@ -11,13 +11,14 @@ type InfoListProps = {
 
 function InfoList({ items, className = '', gap = 'gap-2' }: InfoListProps) {
   return (
-    <ul className={`flex flex-col ${gap} ${className}`}>
+    <dl className={`flex flex-col ${gap} ${className}`}>
       {items.map((item, index) => (
-        <li key={index}>
-          <span className="font-semibold">{item.label}:</span> {item.value}
-        </li>
+        <div className="flex flex-row items-center gap-2" key={index}>
+          <dt className="inline-block font-semibold">{item.label}:</dt>
+          <dd className="inline-block">{item.value}</dd>
+        </div>
       ))}
-    </ul>
+    </dl>
   );
 }
 
