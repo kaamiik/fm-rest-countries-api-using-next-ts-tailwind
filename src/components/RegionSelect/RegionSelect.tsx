@@ -3,7 +3,6 @@ import * as React from 'react';
 import { useTheme } from '@/components/ThemeProvider';
 
 import {
-  Label,
   Button,
   ListBox,
   ListBoxItem,
@@ -35,7 +34,6 @@ function RegionSelect({
       selectedKey={value}
       onSelectionChange={handleSelectionChange}
     >
-      <Label className="sr-only">Filter by region</Label>
       <Button className="dark:bg-dark-blue dark:hover:bg-dark-blue-dark dark:focus:bg-dark-blue-dark flex w-full cursor-pointer items-center justify-between rounded-md bg-white py-4 ps-6 pe-5 shadow-md transition-all duration-200 hover:shadow-lg focus:shadow-lg data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-1 data-[focus-visible]:outline-blue-500">
         <SelectValue>{value || 'Filter by Region'}</SelectValue>
         <Icon
