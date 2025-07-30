@@ -21,7 +21,7 @@ function StyledSearchField({
       onChange={onChange}
       className="text-200 md:text-300 relative w-full max-w-[30rem] font-normal"
     >
-      <Label className="sr-only">Search Countries</Label>
+      <Label className="sr-only">Search for a country</Label>
       <div className="absolute top-1/2 left-8 -translate-y-1/2">
         <Icon
           src={theme === 'light' ? '/search.svg' : '/search-dark.svg'}
