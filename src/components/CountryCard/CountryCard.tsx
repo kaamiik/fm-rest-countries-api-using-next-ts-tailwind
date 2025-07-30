@@ -6,7 +6,10 @@ import type { Country } from '@/types';
 
 import InfoList from '../InfoList';
 
-function CountryCard({ country }: { country: Country }) {
+function CountryCard(
+  { country }: { country: Country },
+  ref: React.ForwardedRef<HTMLAnchorElement>
+) {
   return (
     <li className="dark:bg-dark-blue shadow-focus relative mx-auto max-w-[16.5rem] rounded-md bg-white transition-all duration-300 hover:scale-105 has-[:focus]:ring-2 has-[:focus]:ring-blue-500 has-[:focus]:ring-offset-2">
       <Image
@@ -19,6 +22,7 @@ function CountryCard({ country }: { country: Country }) {
       <div className="ps-6 pt-6 pb-12">
         <h2 className="text-500 font-extrabold">
           <Link
+            ref={ref}
             className="tent-[''] after:absolute after:inset-0 focus:outline-0"
             href={`/${country.cca3.toLowerCase()}`}
           >
@@ -48,4 +52,8 @@ function CountryCard({ country }: { country: Country }) {
   );
 }
 
-export default CountryCard;
+const ForwardedCountryCard = React.forwardRef(CountryCard);
+
+ForwardedCountryCard.displayName = 'CountryCard';
+
+export default ForwardedCountryCard;

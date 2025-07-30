@@ -13,6 +13,7 @@ function PaginatedCountryList({
   searchParams: { search?: string; region?: string };
 }) {
   const [displayCount, setDisplayCount] = React.useState(COUNTRIES_PER_PAGE);
+  const countryRefs = React.useRef<(HTMLElement | null)[]>([]);
 
   React.useEffect(() => {
     setDisplayCount(COUNTRIES_PER_PAGE);
@@ -22,10 +23,26 @@ function PaginatedCountryList({
   const hasMore = displayCount < countries.length;
 
   const loadMore = () => {
-    setDisplayCount((prev) =>
-      Math.min(prev + COUNTRIES_PER_PAGE, countries.length)
+    const previousCount = displayCount;
+    const newCount = Math.min(
+      displayCount + COUNTRIES_PER_PAGE,
+      countries.length
     );
+    setDisplayCount(newCount);
+
+    React.startTransition(() => {
+      setTimeout(() => {
+        const firstNewCardRef = countryRefs.current[previousCount];
+        if (firstNewCardRef) {
+          firstNewCardRef.focus();
+        }
+      }, 100);
+    });
   };
+
+  React.useEffect(() => {
+    countryRefs.current = countryRefs.current.slice(0, displayCount);
+  }, [displayCount]);
 
   if (countries.length === 0) {
     return (
@@ -47,8 +64,14 @@ function PaginatedCountryList({
   return (
     <div className="mt-8">
       <ul className="grid grid-cols-(--my-countries-grid) gap-10 md:mt-12 lg:gap-[4.6875rem]">
-        {displayedCountries.map((country) => (
-          <CountryCard key={country.cca3} country={country} />
+        {displayedCountries.map((country, index) => (
+          <CountryCard
+            key={country.cca3}
+            country={country}
+            ref={(el) => {
+              countryRefs.current[index] = el;
+            }}
+          />
         ))}
       </ul>
 
