@@ -74,7 +74,6 @@ function SearchForm() {
             type="button"
             onClick={clearAllFilters}
             className="text-200 md:text-300 dark:bg-dark-blue flex items-center gap-2 rounded-md bg-white px-4 py-2 text-gray-600 shadow-md transition-all duration-200 hover:bg-gray-50 hover:text-gray-800 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-            aria-label="Clear all filters"
           >
             <svg
               width="16"
